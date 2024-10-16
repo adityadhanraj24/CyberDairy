@@ -1,0 +1,45 @@
+body{
+    background:rgb(39, 56, 60) ;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.aadi{
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    padding:40px 0 ;
+    color:#fff ;
+    margin: 200px auto 0;
+    border: solid , 5px , rgb(231, 152, 33);
+}
+
+.aadi h1{
+    margin-top: 60px;
+    margin-left: 0px;
+    font-size: 64px;
+    font-weight: 300;
+    /* width: 20px; */
+    justify-content: center;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 30px; */
+    /* font-size: 50px; */
+    
+}
+
+.buttons button {
+    font-size: 30px;
+    padding: 20px;
+    margin-left: 40px;
+    background-color: aqua;
+}
+
+h1{
+    font-size: 100px;
+    text-align: center;
+    color: aliceblue;
+}

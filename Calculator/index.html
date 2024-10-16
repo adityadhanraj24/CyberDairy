@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Stopwatch</h1>
+    <div class="aadi">
+        <h1 id="displayTime">00 : 00 : 00 : 00</h1>
+        <div class="buttons">
+               <button onclick="watchStop()">Stop</button>
+               <button onclick="watchStart()" >Start</button>
+               <button onclick="watchReset()">Reset</button>
+         </div>
+    </div>
+
+    <script>
+        let [miniseconds,seconds,minutes,hours]=[0,0,0,0];
+       
+        let displayTime= document.getElementById("displayTime");
+        let timer=null ;
+        function stopwatch(){
+            miniseconds++;
+            if( miniseconds==100){
+                miniseconds=0;
+                seconds++;
+
+                if(seconds==60){
+                 seconds=0;    
+                minutes++;
+            }
+                if(minutes==60){
+                    minutes=0;
+                    hours++;
+                }
+            }
+              let h=hours<10? "0"+ hours: hours;
+              let m=minutes<10? "0"+ minutes: minutes;
+              let s=seconds<10? "0"+ seconds: seconds;
+              let ms=miniseconds<10? "0" + miniseconds : miniseconds;
+             displayTime.innerHTML= h+":" + m+":" +s+":"+ms;
+        }
+           function watchStart()
+           {
+            if( timer!==null){
+                clearInterval(timer);
+            }
+           timer= setInterval(stopwatch,10);
+          }
+
+        function watchStop()
+            {
+                clearInterval(timer);
+            }
+
+        function watchReset()
+               {
+                  clearInterval(timer);
+                  [miniseconds,seconds,minutes,hours]=[0,0,0,0];
+                   displayTime.innerHTML="00:00:00:00";
+                }
+    </script>
+</body>
+</html>
